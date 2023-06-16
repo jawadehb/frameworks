@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<nav th:fragment="navbar">
+  <img th:src="@{/images/derdehandslogo.png}" alt="logo">
+  <ul>
+    <li><a th:href="@{~/index}" th:text="#{navbar.index}"></a></li>
+    <li><a th:href="@{~/newproduct}" th:text="#{navbar.new}"></a></li>
+    <li><a th:href="@{~/about}" th:text="#{navbar.about}"></a></li>
+  </ul>
+</nav>
+
+
+<head th:fragment="header(name)">
+  <meta charset="UTF-8">
+  <title th:text="${name}"></title>
+  <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+</head>
+
+</html>

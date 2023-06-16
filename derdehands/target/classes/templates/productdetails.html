@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{menutemplate::header('index')}" >
+</head>
+
+<body>
+  <nav th:insert="~{menutemplate::navbar}" />
+  <h1 class = 'details'>Add a product</h1>
+  <table class = "tableDetails">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>E-mail</th>
+      <th>Details</th>
+      <th>Category</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td th:text="${product.name}" />
+      <td th:text="${product.username}"/>
+      <td th:text="${product.email}" />
+      <td th:text="${product.omschrijving}"/>
+      <td th:text="${product.category}" />
+      <td th:text="${product.price}"/>
+    </tr>
+    </tbody>
+  </table>
+</body>
+</html>

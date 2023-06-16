@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{menutemplate::header('index')}" >
+  <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+</head>
+<body>
+
+  <nav th:insert="~{menutemplate::navbar}" />
+
+  <div id="container">
+    <table class = 'tableIndex'>
+      <h1>All products</h1>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="product: ${products}">
+          <td th:text="${product.name}" />
+          <td th:text="${product.price}"/>
+          <td><a th:href="@{/product/{id}(id=${product.id})}"><button >View Details</button></a></td>
+        </tr>
+      </tbody>
+    </table>
+    <a th:href="@{~/newproduct}"><button class="btnNewProduct">Add a product</button></a>
+  </div>
+</body>
+</html>
